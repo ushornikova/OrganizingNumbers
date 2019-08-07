@@ -36,10 +36,10 @@ namespace OrganizingNumbers
                 for (int i = 0; i < NumberForI; i++)
                 {
                     int randomNumber = varRandNum.Next(1, 5);
-                    Console.WriteLine(randomNumber);
+                    Console.Write(randomNumber+ " ");
                 }
             }
-
+            Console.WriteLine("\t");
             Console.WriteLine("This is task 3");
             //Напечатать "столбиком" все целые числа от 20 до 35
             AWholeNumber[] somevar = new AWholeNumber[16];
@@ -48,20 +48,20 @@ namespace OrganizingNumbers
                 somevar[i] = new AWholeNumber(20+i);
                 Console.WriteLine(somevar[i].From20To35);
             }
-
+            Console.WriteLine("\t");
             Console.WriteLine("This is task 4");
             //квадраты всех целых чисел от 10 до b (значение b вводится с клавиатуры;)
             Console.WriteLine("Please enter max number b. b sould be bigger than 10");
             string b;       
             b = Console.ReadLine();
             int b1 = Convert.ToInt32(b);
-            SquareOfANumber[] anyvar = new SquareOfANumber[b1];
-            int x = 0;
-            while (x < b1)
+            int b2 = b1 + 1;
+            SquareOfANumber[] anyvar = new SquareOfANumber[b2];
+
+            for (int j = 10; j < b2; j++)
             {
-                anyvar[x] = new SquareOfANumber(10);
-                Console.WriteLine(anyvar[x].IntNumbers);
-                x++;
+                anyvar[j] = new SquareOfANumber(j);
+                Console.WriteLine(anyvar[j].IntNumbers);
             }
 
             Console.ReadLine();
@@ -94,7 +94,7 @@ namespace OrganizingNumbers
 
         public SquareOfANumber (int intnumber)
         {
-            IntNumbers = intnumber;
+            IntNumbers = intnumber * intnumber;
         }
     }
 }

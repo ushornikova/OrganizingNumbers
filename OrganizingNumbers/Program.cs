@@ -21,6 +21,8 @@ namespace OrganizingNumbers
             }
             Console.WriteLine(var[0].Twenty + " " + var[1].Twenty+" " + var[2].Twenty + " ");
 
+            Console.WriteLine("\t");
+            Console.WriteLine(" \t");
             Console.WriteLine("This is task 2");
             //Составить программу вывода любого числа любое заданное число раз в виде, в одному рядку
             // не можу знайти такого щоб мені виводило числа в одному рядку
@@ -40,6 +42,7 @@ namespace OrganizingNumbers
                 }
             }
             Console.WriteLine("\t");
+            Console.WriteLine(" \t");
             Console.WriteLine("This is task 3");
             //Напечатать "столбиком" все целые числа от 20 до 35
             AWholeNumber[] somevar = new AWholeNumber[16];
@@ -48,21 +51,51 @@ namespace OrganizingNumbers
                 somevar[i] = new AWholeNumber(20+i);
                 Console.WriteLine(somevar[i].From20To35);
             }
+
             Console.WriteLine("\t");
+            Console.WriteLine(" \t");
             Console.WriteLine("This is task 4");
             //квадраты всех целых чисел от 10 до b (значение b вводится с клавиатуры;)
             Console.WriteLine("Please enter max number b. b sould be bigger than 10");
             string b;       
             b = Console.ReadLine();
             int b1 = Convert.ToInt32(b);
-            int b2 = b1 + 1;
-            SquareOfANumber[] anyvar = new SquareOfANumber[b2];
-
-            for (int j = 10; j < b2; j++)
+            if (b1 > 10)
             {
-                anyvar[j] = new SquareOfANumber(j);
-                Console.WriteLine(anyvar[j].IntNumbers);
+                Console.WriteLine("B should be less than 10");
             }
+            else 
+            {
+                int b2 = b1 + 1;
+                SquareOfANumber[] anyvar = new SquareOfANumber[b2];
+
+                for (int j = 10; j < b2; j++)
+                {
+                    anyvar[j] = new SquareOfANumber(j);
+                    Console.WriteLine(anyvar[j].IntNumbers);
+                }
+                
+            }
+            Console.ReadLine();
+
+            Console.WriteLine("\t");
+            Console.WriteLine(" \t");
+            Console.WriteLine("This is task 5");
+            //Напечатать "столбиком": третьи степени всех целых чисел от a до 10(значение aвводится с клавиа-туры; a <10);
+            Console.WriteLine("Please enter number a. a sould be less than 10");
+
+            string a;
+            a = Console.ReadLine();
+            int a1 = Convert.ToInt32(a);
+            TheThirdPower[] someanyvar = new TheThirdPower[11];
+            int k = a1;
+            while (k < 11)
+            {
+                someanyvar[k] = new TheThirdPower(k);
+                Console.WriteLine(someanyvar[k].TheNumber);
+                k++;
+            }
+
 
             Console.ReadLine();
         }
@@ -92,10 +125,21 @@ namespace OrganizingNumbers
     {
         public int IntNumbers { get; set; }
 
-        public SquareOfANumber (int intnumber)
+        public SquareOfANumber(int intnumber)
         {
             IntNumbers = intnumber * intnumber;
         }
     }
+
+     public class TheThirdPower
+    {
+        public int TheNumber { get; set; }
+
+        public TheThirdPower(int thenumber)
+        {
+            TheNumber = thenumber * thenumber * thenumber;
+        }
+    }
+    
 }
 

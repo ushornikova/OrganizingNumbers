@@ -120,14 +120,34 @@ namespace OrganizingNumbers
             //Console.WriteLine(" \t");
             //Console.WriteLine("This is task 7");
             //Напечатать числа следующим образом:10 10.4 ...25 25.4
-            TheDoubleNumbers[] doublevar = new TheDoubleNumbers[26];
-                for (int i = 10; i < 26; i++)
+            TheDoubleNumbers[] doublevar = new TheDoubleNumbers[46];
+                for (int i = 45; i >= 25; i--)
                 {
-                    doublevar[i] = new TheDoubleNumbers(i, i);
+                    doublevar[i] = new TheDoubleNumbers(i, i-1, i-1);
                     Console.Write(doublevar[i].TheInt + " ");
-                    Console.Write(doublevar[i].TheDouble);
-                    Console.WriteLine(" \t");
+                    Console.Write(doublevar[i].TheDouble + " ");
+                    Console.Write(doublevar[i].TheDouble1);
+                Console.WriteLine(" \t");
                 }
+
+            Goods[] vargoods = new Goods[20];
+            int k = 1;
+            while (k < 10)
+            {
+                vargoods[k] = new Goods(k, k);
+                Console.Write(vargoods[k].TheNumberOfGoods + "goods have price ");
+                Console.Write(vargoods[k].Price + "hrn");
+                Console.WriteLine(" \t");
+                k++;
+            }
+
+            //for (int k = 1; k < 10; k++)
+            //{
+            //    vargoods[k] = new Goods(k, k);
+            //    Console.Write(vargoods[k].TheNumberOfGoods + "goods have price ");
+            //    Console.Write(vargoods[k].Price + "hrn");
+            //    Console.WriteLine(" \t");
+            //}
 
             Console.ReadLine();
         }
@@ -177,11 +197,25 @@ namespace OrganizingNumbers
     {
         public int TheInt { get; set; }
         public double TheDouble { get; set; }
+        public double TheDouble1 { get; set; }
 
-        public TheDoubleNumbers(int theint, double thedouble)
+        public TheDoubleNumbers(int theint, double thedouble, double thedouble1)
         {
             TheInt = theint;
-            TheDouble = thedouble;
+            TheDouble = thedouble+0.5;
+            TheDouble1 = thedouble1 + 0.2;
+        }
+    }
+
+    public class Goods
+    {
+        public int TheNumberOfGoods { get; set; }
+        public double Price { get; set; }
+
+        public Goods(int thenumberofgoods, double price)
+        {
+            TheNumberOfGoods = thenumberofgoods;
+            Price = thenumberofgoods * 24.4;
         }
     }
 }
